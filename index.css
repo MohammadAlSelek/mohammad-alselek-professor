@@ -1,0 +1,158 @@
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #020617;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 5px;
+  border: 2px solid #020617;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Animation Utilities */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-out forwards;
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* --- PRINT STYLES FOR CV GENERATION --- */
+@media print {
+  @page {
+    margin: 0.8cm;
+    size: A4;
+  }
+
+  /* Reset Colors and Backgrounds */
+  body {
+    background-color: white !important;
+    color: #000 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Hide Web-only Elements */
+  .print\:hidden,
+  nav,
+  footer,
+  button,
+  .chat-widget,
+  .animate-pulse,
+  .bg-\[url.*\] {
+    display: none !important;
+  }
+
+  /* Layout Adjustments */
+  #root,
+  main {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Section Headings */
+  h1 {
+    color: #000 !important;
+    font-size: 24pt !important;
+    margin-bottom: 5px !important;
+  }
+  h2 {
+    color: #000 !important;
+    border-bottom: 2px solid #333 !important;
+    padding-bottom: 5px !important;
+    margin-top: 20px !important;
+    margin-bottom: 15px !important;
+    font-size: 16pt !important;
+  }
+  h3 {
+    color: #222 !important;
+    font-size: 14pt !important;
+    margin-bottom: 10px !important;
+  }
+
+  /* Remove Dark Mode Cards */
+  .bg-slate-900\/50,
+  .bg-slate-950,
+  .backdrop-blur-sm,
+  .backdrop-blur-md {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin-bottom: 15px !important;
+  }
+
+  /* Typography */
+  p,
+  li,
+  span {
+    color: #111 !important;
+    font-size: 10pt !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Links */
+  a {
+    text-decoration: none !important;
+    color: #000 !important;
+  }
+
+  /* Specific Component Tweaks */
+  /* Hero */
+  .hero-section {
+    padding-top: 0 !important;
+    min-height: auto !important;
+  }
+  .hero-text {
+    border-left: none !important;
+    padding-left: 0 !important;
+  }
+
+  /* Lists */
+  ul {
+    margin-left: 20px !important;
+    list-style-type: disc !important;
+  }
+  li {
+    margin-bottom: 4px !important;
+  }
+
+  /* Grid resets */
+  .grid {
+    display: block !important;
+  }
+  .grid-cols-1,
+  .grid-cols-2,
+  .lg\:grid-cols-2 {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Avoid breaking inside elements */
+  .break-inside-avoid,
+  section {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
