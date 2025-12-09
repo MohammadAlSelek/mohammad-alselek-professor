@@ -56,12 +56,12 @@ const FeaturedProjects: React.FC = () => {
 
             {/* Media Content */}
             <div className="lg:w-7/12 w-full space-y-4">
-              <div className="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-xl relative group aspect-video transition-all duration-300">
+              <div className="bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 shadow-xl relative group aspect-video transition-all duration-300">
                 {activeMedia.type === 'video' ? (
                   <video
                     key={activeMedia.url}
                     controls
-                    className="w-full h-full object-cover bg-slate-100"
+                    className="w-full h-full object-contain bg-slate-100"
                     autoPlay={false}
                   >
                     <source src={assetPath(activeMedia.url)} type="video/mp4" />
@@ -71,7 +71,7 @@ const FeaturedProjects: React.FC = () => {
                   <img
                     src={assetPath(activeMedia.url)}
                     alt={activeMedia.caption}
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full object-contain object-center bg-white p-4 group-hover:scale-[1.02] transition-transform duration-500"
                   />
                 )}
 
@@ -85,11 +85,11 @@ const FeaturedProjects: React.FC = () => {
 
               {project.media.length > 1 && (
                 <div className="grid grid-cols-3 sm:grid-cols-4 gap-4">
-                  {project.media.map((item, mIndex) => (
-                    <button
-                      key={mIndex}
-                      onClick={() => handleMediaSwap(index, mIndex)}
-                      className={`bg-white rounded-lg overflow-hidden border aspect-video relative group cursor-pointer transition-all duration-200 ${
+                      {project.media.map((item, mIndex) => (
+                        <button
+                          key={mIndex}
+                          onClick={() => handleMediaSwap(index, mIndex)}
+                          className={`bg-white rounded-lg overflow-hidden border aspect-video relative group cursor-pointer transition-all duration-200 ${
                         activeIndex === mIndex
                           ? 'border-cyan-400 ring-2 ring-cyan-100 opacity-100 scale-105 shadow-lg'
                           : 'border-slate-200 opacity-80 hover:opacity-100 hover:border-slate-300'
@@ -112,7 +112,7 @@ const FeaturedProjects: React.FC = () => {
                         <img
                           src={assetPath(item.url)}
                           alt={item.caption}
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-cover bg-white"
                         />
                       )}
                     </button>

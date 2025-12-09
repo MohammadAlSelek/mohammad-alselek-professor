@@ -74,20 +74,20 @@ const Hero: React.FC = () => {
           
           {/* Photo Section */}
           <div className="lg:col-span-5 relative animate-in slide-in-from-right duration-1000 fade-in print:hidden mt-8 lg:mt-0 order-1 lg:order-2 flex justify-center">
-             <div className="absolute inset-0 bg-gradient-to-tr from-cyan-200 to-blue-100 rounded-[2rem] transform rotate-3 scale-105 opacity-40 blur-3xl"></div>
+             <div className="absolute inset-0 bg-gradient-to-tr from-cyan-200 to-blue-100 rounded-[2rem] transform rotate-3 scale-110 opacity-50 blur-3xl"></div>
             
             {/* Image Container - Aspect ratio for portrait */}
-            <div className="relative rounded-2xl overflow-hidden border-2 border-slate-200 shadow-2xl group w-72 h-96 md:w-80 md:h-[28rem] bg-white">
+            <div className="relative rounded-[28px] overflow-hidden border-2 border-white shadow-[0_20px_60px_rgba(8,145,178,0.18)] group w-72 h-96 md:w-80 md:h-[28rem] bg-white">
                  <img 
-                  className="object-cover object-top w-full h-full transition-all duration-700 ease-in-out opacity-90 group-hover:opacity-100 group-hover:scale-105"
+                  className="object-cover object-top w-full h-full transition-all duration-700 ease-in-out opacity-95 group-hover:opacity-100 group-hover:scale-[1.03]"
                   src={assetPath('profile.jpg')}
                   alt="Mohammad Alselek"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-white/60 via-transparent to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-white/70 via-transparent to-transparent"></div>
             </div>
             
             {/* Floating Stats Card 1 */}
-            <div className="absolute -bottom-4 -left-4 bg-white/90 backdrop-blur-xl p-4 rounded-xl border border-slate-200 hidden md:flex items-center gap-4 animate-bounce shadow-2xl shadow-cyan-100" style={{ animationDuration: '3s' }}>
+            <div className="absolute -bottom-4 -left-4 bg-white shadow-xl shadow-cyan-100/60 backdrop-blur-xl p-4 rounded-xl border border-slate-200 hidden md:flex items-center gap-4 animate-bounce" style={{ animationDuration: '3s' }}>
                 <div className="bg-cyan-50 p-3 rounded-full border border-cyan-100">
                     <Cpu className="w-6 h-6 text-cyan-600" />
                  </div>
